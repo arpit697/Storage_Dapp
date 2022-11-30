@@ -1,0 +1,109 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+mat-toolbar{
+    .account{
+        color: #CC3636;
+        .account-number{
+            color: whitesmoke;
+        }
+    }
+    background-color: #B1B2FF;
+    button{
+        margin-right: 2em;
+        background-color: #CC3636;
+        color: whitesmoke;
+    }
+    .balance{
+      margin-left: 2em;
+      color: #CC3636;
+    }
+}
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: #eef1ff;
+  .deploy-button{
+    margin-top: 3em;
+    background-color: #F57328;
+    color: whitesmoke;
+  }
+  .deployer{
+    margin-right: 2em;
+    background-color: #D2DAFF;
+    height: 20em;
+    min-width: 40em;
+    margin-top: 5em;
+    display: grid;
+    grid-template-columns: auto auto;
+    .col-1{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .col-2{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      button{
+        background-color: #F57328;
+        color: whitesmoke;
+        width: 7em;
+      }
+    }
+  }
+  .content {
+   
+    background-color: #D2DAFF;
+    height: 20em;
+    min-width: 40em;
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    mat-form-field {
+      width: 20em;
+    }
+    mat-card-actions {
+      display: flex;
+      gap: 2em;
+    .retrive{
+        background-color: #367E18;
+        color: whitesmoke;
+    }
+    .store{
+        background-color: #F57328;
+        color: whitesmoke;
+    }
+      button {
+        width: 6em;
+      }
+    }
+  }
+}
+.transaction-container{
+    background-color: #eef1ff;
+    min-height: 100%;
+    
+    .heading{
+        padding-top: 1em;
+        text-align: center;
+    }
+    .transactions{
+        padding-top: 1em;
+        padding-left: 2em;
+        padding-right: 2em;
+        text-align: center;
+        mat-card{
+          background-color: #D2DAFF;
+          color: #367E18 ;
+        }
+    }
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: white;
+    border-radius: 5px;
+}

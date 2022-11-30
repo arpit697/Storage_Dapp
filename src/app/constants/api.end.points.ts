@@ -1,0 +1,1 @@
+export const ALCHEMY_URL_API_KEY = "https://eth-goerli.g.alchemy.com/v2/UuTCDxKqlAg-7qgS-8FPZhDqD1Vu1Vqm"

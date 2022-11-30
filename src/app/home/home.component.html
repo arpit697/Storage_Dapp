@@ -1,0 +1,59 @@
+<p>
+  <mat-toolbar>
+    <small class="account" *ngIf="!(Accounts == undefined)">Account &nbsp; :- &nbsp;&nbsp; <span class="account-number">{{Accounts}}</span></small>
+    <span class="balance" *ngIf="!(Balance == undefined)">Balance :- {{Balance}}</span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button (click)="getBal()" *ngIf="!(Accounts == undefined)">Check Balance</button>
+    <button mat-raised-button style="background-color:#367E18 ;" (click)="createAccount()">Create Account</button>
+    <button mat-raised-button (click)="onConnect()">Connect With MetaMask</button>
+  </mat-toolbar>
+</p>
+<!-- <button (click)="getBal()" >Get Balance</button> -->
+<div class="container">
+    <mat-card class="deployer" *ngIf="!(Accounts == undefined)">
+       <mat-card-content class="col-1">
+        <mat-card-content>
+            <mat-card-subtitle>Account</mat-card-subtitle>
+            <mat-form-field appearance="outline">
+                <mat-select placeholder="Selected" (selectionChange)=selectedAccount($event.value)>
+                    <mat-option [value]="Accounts">{{Accounts}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-card-content>
+
+        <mat-card-content>
+            <mat-card-subtitle>Gas Limit</mat-card-subtitle>
+            <mat-form-field appearance="outline">
+                <input #gasLimit matInput type="text" placeholder="Provide">
+            </mat-form-field>
+        </mat-card-content>
+       </mat-card-content> 
+       <mat-card-content class="col-2">
+        <button mat-raised-button (click)="deploy()">Deploy</button>
+       </mat-card-content>
+    </mat-card>
+    <mat-card class="content" *ngIf="!(Accounts == undefined) && Deployed == true">
+        <mat-card-title>Storage</mat-card-title>
+        <mat-card-subtitle>Store Value On Ethereum Block Chain ..</mat-card-subtitle>
+        <mat-form-field appearance="outline">
+            <input #input matInput placeholder="Number">
+        </mat-form-field>
+        <mat-card-actions>
+        <button mat-raised-button (click)="Store()" class="store">Store</button>
+        <button mat-raised-button (click)="Retrieve()" class="retrive">Retrive</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+<div class="transaction-container" >
+    <h1 class="heading" *ngIf="!(Result == undefined)">Last Retrieved Value</h1>
+    <div class="transactions">
+        <mat-card *ngIf="!(Result == undefined)">
+            <mat-card-title>
+             {{Result}}
+            </mat-card-title>
+        </mat-card>
+    </div>
+</div>
+
+
+
